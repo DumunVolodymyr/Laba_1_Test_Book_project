@@ -1,57 +1,74 @@
 package Book;
 
 public class Book {
-	public int number_page;
-	public String autor;
-	public int price;
+	private int numberPage;
+	private String autor;
+	private int price;
 	private String genre;
-	static private int years;
+	private int numberChapter;
+	private static int years;
 	protected String name;
 	protected String description;
+
 	public String getGenre() {
+
 		return genre;
 	}
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public int getYears() {
-		return years;
+
+	public int getNumberChapter() {
+
+		return numberChapter;
 	}
-	public void setYears(int years) {
-		this.years = years;
+
+	public void setNumberChapter(int numberChapter) {
+		this.numberChapter = numberChapter;
 	}
-	
-	public Book() {}
-	
-	public Book (int number_page, String autor, int price, String genre) {
-		this.number_page = number_page;
+
+	public Book() {
+	}
+
+	public Book(int numberPage, String autor, int price, String genre) {
+		this.numberPage = numberPage;
 		this.autor = autor;
 		this.price = price;
 		this.genre = genre;
 	}
-	
-	public Book(int number_page, String autor, int price, String genre,int years,
-			String name, String description) {
-		this(number_page, autor, price, genre);
+
+	public Book(int numberPage, String autor, int price, String genre, int numberChapter, int years, String name,
+			String description) {
+		this(numberPage, autor, price, genre);
+		this.numberChapter = numberChapter;
 		this.years = years;
 		this.name = name;
-		this.description = description;			
+		this.description = description;
 	}
-	
+
 	public String toString() {
-		return number_page + "" + autor + "" + price;
+		return numberPage + " " + autor + " " + price + " " + genre + " " + numberChapter + " " + name + " "
+				+ description;
 	}
+
 	public void printYears() {
 		System.out.println(years);
 	}
-	public void resetValues(int number_page, String autor, int price, String genre,int years,
+
+	public void printStaticYears() {
+		System.out.println(years);
+	}
+
+	public void resetValues(int numberPage, String autor, int price, String genre, int numberChapter, int years,
 			String name, String description) {
-		this.number_page = number_page;
+		this.numberPage = numberPage;
 		this.autor = autor;
 		this.price = price;
 		this.genre = genre;
+		this.numberChapter = numberChapter;
 		this.years = years;
 		this.name = name;
-		this.description = description;	
+		this.description = description;
 	}
 }
